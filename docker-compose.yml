@@ -8,10 +8,15 @@ services:
       - "6877:80"
     restart: unless-stopped
     volumes:
-      - .:/usr/share/nginx/html
+      - ./:/usr/share/nginx/html
+      - ./assets:/usr/share/nginx/html/assets
+      - ./generated:/usr/share/nginx/html/generated
+    network_mode: "bridge"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 5s
+    environment:
+      - TZ=Asia/Shanghai
