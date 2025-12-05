@@ -28,7 +28,7 @@
 
 3. **运行 Docker 容器**
    ```bash
-   docker run -d -p 6877:80 --name nft-generator --restart unless-stopped nft-generator
+   docker run -d -p 6877:6877 --name nft-generator --restart unless-stopped nft-generator
    ```
 
 4. **访问应用**

@@ -39,7 +39,7 @@ docker tag <local-image-name>:<tag> <docker-hub-username>/<repository-name>:<tag
 docker tag nft-generator:latest hahhh11/nft-generator:latest
 
 # 也可以添加版本号
-docker tag nft-generator:latest hahhh11/nft-generator:1.0.0
+docker tag nft-generator:latest hahhh11/nft-generator:1.0.1
 ```
 
 ## 步骤 3：推送镜像到 Docker Hub
@@ -57,7 +57,7 @@ docker push <docker-hub-username>/<repository-name>:<tag>
 docker push hahhh11/nft-generator:latest
 
 # 推送版本标签
-docker push hahhh11/nft-generator:1.0.0
+docker push hahhh11/nft-generator:1.0.1
 ```
 
 ## 步骤 4：验证推送结果
@@ -75,11 +75,11 @@ docker login
 
 # 3. 为镜像打标签
 docker tag nft-generator:latest hahhh11/nft-generator:latest
-docker tag nft-generator:latest hahhh11/nft-generator:1.0.0
+docker tag nft-generator:latest hahhh11/nft-generator:1.0.1
 
 # 4. 推送镜像
 docker push hahhh11/nft-generator:latest
-docker push hahhh11/nft-generator:1.0.0
+docker push hahhh11/nft-generator:1.0.1
 ```
 
 ## 从 Docker Hub 拉取和使用镜像
@@ -91,7 +91,7 @@ docker push hahhh11/nft-generator:1.0.0
 docker pull hahhh11/nft-generator:latest
 
 # 运行容器
-docker run -d -p 6877:80 --name nft-generator hahhh11/nft-generator:latest
+docker run -d -p 6877:6877 --name nft-generator hahhh11/nft-generator:latest
 ```
 
 ## 使用 GitHub Actions 自动化构建和推送

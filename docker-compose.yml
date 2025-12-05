@@ -1,22 +1,22 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  nft-generator:
-    build: .
-    container_name: nft-generator
-    ports:
-      - "6877:80"
-    restart: unless-stopped
-    volumes:
-      - ./:/usr/share/nginx/html
-      - ./assets:/usr/share/nginx/html/assets
-      - ./generated:/usr/share/nginx/html/generated
-    network_mode: "bridge"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 5s
-    environment:
-      - TZ=Asia/Shanghai
+    nft-generator:
+        build: .
+        container_name: nft-generator
+        ports:
+      - "6877:6877"
+        restart: unless-stopped
+        volumes:
+            - ./:/usr/share/nginx/html
+            - ./assets:/usr/share/nginx/html/assets
+            - ./generated:/usr/share/nginx/html/generated
+        network_mode: "bridge"
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:6877"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+            start_period: 5s
+        environment:
+            - TZ=Asia/Shanghai
